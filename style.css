@@ -1,155 +1,138 @@
 :root {
-    --clr-violet: hsl(257, 40%, 49%);
-    --clr-magenta: hsl(300, 69%, 71%);
+    --clr-p-red: hsl(0, 78%, 62%);
+    --clr-p-cyan: hsl(180, 62%, 55%);
+    --clr-p-orange: hsl(34, 97%, 64%);
+    --clr-p-blue: hsl(212, 86%, 64%);
+
+    --clr-n-darkblue: hsl(234, 12%, 34%);
+    --clr-n-grayblue: hsl(229, 6%, 66%);
+    --clr-n-lightgray: hsl(0, 0%, 98%);
 }
 
-/* makes sizing simpler */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* remove default spacing */
-/* force styling of type through styling, rather than elements */
 * {
     margin: 0;
     padding: 0;
-    font: inherit;
+    box-sizing: border-box;
 }
 
-/* responsive images/videos */
-img,
-picture,
-svg,
-video {
-    max-width: 100%;
+h1,
+h2 {
+    color: var(--clr-n-darkblue);
 }
 
 body {
-    min-height: 100svh;
     font-family: 'Poppins', sans-serif;
-    background: url(/images/bg-desktop.svg) no-repeat var(--clr-violet);
-    color: white;
+    
 }
 
-nav img{
-    height: 50px;
-    margin: 2rem 4rem;
-}
-
-.hero{
+.article {
+    margin: 4rem 2rem;
+    justify-content: center;
+    align-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding: 3rem 4rem;
-    position: relative;
-}
-
-.hero-img img{
-    height: 95%;
-    object-fit: contain;
-}
-
-.content{
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 3rem 3rem 0rem;
-    gap: 2rem;
-}
-
-h1{
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-p{
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.5rem;
-    font-size: 1.1rem;
-}
-
-button{
-    width: 200px;
-    padding: 1rem;
-    border-radius: 100vh;
-    cursor: pointer;
-    border: none;
-    box-shadow: .2rem .5rem 1rem rgba(0, 0, 0, 0.25);
-    background-color: white;
-    transition: all .2s;
-    color: var(--clr-violet);
-}
-button:hover{
-    background-color: var(--clr-magenta);
-    color: white;
-}
-
-.social-icons{
-    position: absolute;
-    right: 5rem;
-    bottom: 1rem;
-}
-
-i:first-child{
-    padding: 11px 15px;
-}
-i{
-    color: white;
-    border: 1px solid white;
-    padding: 11px 11px;
-    border-radius: 100vh;
-    margin-left: 1rem;
-    cursor: pointer;
-    transition: all .2s;
-}
-i:hover{
-    color: var(--clr-magenta);
-    border-color: var(--clr-magenta);
-}
-
-@media (max-width: 768px) {
-    body{
-        overflow: auto;
-        background-size: contain;
     }
 
-    nav img{
-        height: 30px;
-        margin: 2rem 2rem 1rem 2rem;
+.heading {
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.light {
+    font-weight: 200;
+}
+
+p {
+    color: var(--clr-n-grayblue);
+    font-weight: 400;
+    font-size: .8rem;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    max-width: 450px;
+    display: inline-block;
+}
+
+.cards {
+    display: grid;
+    justify-content: center;
+}
+
+.section {
+    box-shadow: 0 0 1rem rgba(0, 0, 255, 0.2);
+    padding: 1.5rem 2rem;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+    max-width: 350px;
+    max-height: 250px;
+}
+
+.supervisor {
+    border-top: 4px solid var(--clr-p-cyan);
+}
+
+.team {
+    border-top: 4px solid var(--clr-p-red);
+}
+
+.karma {
+    border-top: 4px solid var(--clr-p-orange);
+}
+
+.calculator {
+    border-top: 4px solid var(--clr-p-blue);
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-bottom: -.5rem;
+}
+
+.icon {
+    display: flex;
+    justify-content: end;
+}
+
+.section p {
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section{
+        margin-bottom: unset;
+    }
+
+    .supervisor {
+        grid-column: 1;
+        grid-row: 1 / span 2;
     }
     
-    .hero{
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1rem;
-        padding: 2rem 3rem;
+    .team {
+        grid-column: 2;
+        grid-row: 1;
     }
-
-    .content{
-        margin-right: unset;
-        padding: 0rem;
-        margin-bottom: 3rem;
+    
+    .karma {
+        grid-column: 2;
+        grid-row: 2;
     }
-
-    p{
-        font-size: 1rem;
+    
+    .calculator {
+        grid-column: 3;
+        grid-row: 1 / span 2;
     }
 
     h1{
-        font-size: 1.5rem;
-    }
-
-    .social-icons{
-        position: static;
-    }
-
-    button{
-        margin-inline: auto;
-        width: 50vw;
-        max-width: unset;
-        padding: .5rem;
-        font-size: .8rem;
+        font-size: 2rem;
     }
 }
